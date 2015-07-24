@@ -5,6 +5,9 @@
 " Original script by scott-268 (2007)
 " With modifications by _sc_ (2009) and qualiabyte (2012)
 
+" modifications by Gregory Nisbet 2015
+" StepColorExitHook 
+
 function! LoadColors()
         let g:step_colors = split(globpath(&rtp,"colors/*.vim"),"\n")
 endfunction
@@ -24,10 +27,16 @@ endfunction
 
 function! StepColorNext()
         call StepColorBy( 1 )
+        if exists("*g:StepColorExitHook")
+                call g:StepColorExitHook()
+        endif
 endfunction
 
 function! StepColorPrev()
         call StepColorBy( -1 )
+        if exists("*g:StepColorExitHook")
+                call g:StepColorExitHook()
+        endif
 endfunction
 
 function! PrintColorscheme()
