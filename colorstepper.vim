@@ -5,7 +5,7 @@
 " Original script by scott-268 (2007)
 " With modifications by _sc_ (2009) and qualiabyte (2012)
 
-" modifications by Gregory Nisbet 2015
+" tiny modifications by Gregory Nisbet 2015
 " StepColorExitHook 
 
 function! LoadColors()
